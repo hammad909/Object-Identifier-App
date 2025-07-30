@@ -36,12 +36,15 @@ fun MainScreen(navController: NavController, cameraViewModel: CameraViewModel) {
         }
     }
 
+    // Extracted color from image
+    val aquaBlue = Color(0xFF95E1DF)
+
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     Text(
-                        text = "AnatoScan",
+                        text = "Object Identifier",
                         color = Color.White,
                         modifier = Modifier.fillMaxWidth(),
                         style = MaterialTheme.typography.titleLarge,
@@ -49,13 +52,12 @@ fun MainScreen(navController: NavController, cameraViewModel: CameraViewModel) {
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF4B2E68), // slightly lighter than background
+                    containerColor = aquaBlue,
                     titleContentColor = Color.White
                 )
             )
-        }
-        ,
-        containerColor = Color(0xFF362246)
+        },
+        containerColor = aquaBlue
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -66,7 +68,7 @@ fun MainScreen(navController: NavController, cameraViewModel: CameraViewModel) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Start Scanning!",
+                text = "Start Identifying!",
                 style = MaterialTheme.typography.headlineLarge,
                 color = Color.White
             )
@@ -123,7 +125,7 @@ fun MainScreen(navController: NavController, cameraViewModel: CameraViewModel) {
                 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White,
-                    contentColor = Color(0xFF362246)
+                    contentColor = aquaBlue
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
